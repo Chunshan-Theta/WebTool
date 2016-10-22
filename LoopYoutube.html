@@ -10,7 +10,19 @@
 	width="640" 
 	height="360" 
 	src="https://www.youtube.com/embed/tp0tMGjylNQ?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=tp0tMGjylNQ"
-	frameborder="0" allowfullscreen></iframe> 
-
+	frameborder="0" allowfullscreen></iframe>
+   <input id="inputURL" type="text"></input>
+   <button onclick="changeSrc()">go</button>
    </body>
+   <script type="text/javascript">
+	function changeSrc()
+	  {
+      var inputURL = document.getElementById("inputURL").value;
+	  
+	  inputURL = inputURL.substring(inputURL.indexOf("v=")+2);
+	  
+	  //alert(inputURL);
+	  document.getElementById("ytplayer").src="https://www.youtube.com/embed/"+inputURL+"?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist="+inputURL;
+	  }
+	</script>
 </html>
